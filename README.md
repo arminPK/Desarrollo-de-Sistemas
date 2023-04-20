@@ -2,12 +2,12 @@
 Problema 1: Artículos y encargos Una base de datos para una pequeña empresa debe
 contener información acerca de clientes, artículos y pedidos. Hasta el momento se registran
 los siguientes datos en documentos varios:
-• Para cada cliente: Número de cliente (único), Direcciones de envío (varias por cliente), Saldo,
+- Para cada cliente: Número de cliente (único), Direcciones de envío (varias por cliente), Saldo,
 Límite de crédito (depende del cliente, pero en ningún caso debe superar los 3.000.000 pts),
 Descuento.
-• Para cada artículo: Número de artículo (único), Fábricas que lo distribuyen, Existencias de ese
+- Para cada artículo: Número de artículo (único), Fábricas que lo distribuyen, Existencias de ese
 artículo en cada fábrica, Descripción del artículo.
-• Para cada pedido: Cada pedido tiene una cabecera y el cuerpo del pedido. La cabecera está
+- Para cada pedido: Cada pedido tiene una cabecera y el cuerpo del pedido. La cabecera está
 formada por el número de cliente, dirección de envío y fecha del pedido. El cuerpo del pedido
 son varias líneas, en cada línea se especifican el número del artículo pedido y la cantidad.
 Además, se ha determinado que se debe almacenar la información de las fábricas. Sin
@@ -23,9 +23,11 @@ de un sistema de ventas. La empresa necesita llevar un control de proveedores, c
 productos y ventas. Un proveedor tiene un RUT, nombre, dirección, teléfono y página web. Un
 cliente también tiene RUT, nombre, dirección, pero puede tener varios teléfonos de contacto.
 La dirección se entiende por calle, número, comuna y ciudad.
+
 Un producto tiene un id único, nombre, precio actual, stock y nombre del proveedor. Además
 se organizan en categorías, y cada producto va sólo en una categoría. Una categoría tiene id,
 nombre y descripción.
+
 Por razones de contabilidad, se debe registrar la información de cada venta con un id, fecha,
 cliente, descuento y monto final. Además se debe guardar el precio al momento de la venta, la
 cantidad vendida y el monto total por el producto.
@@ -48,10 +50,11 @@ Servicios. El interés primario es poder hacer que los Bienes se manejen de form
 el menor grado de error. Para esto quien maneja la sección de "Bienes y Suministros" plantea
 las siguientes condiciones del negocio para la construcción de una base de datos:
 
-• La Sección está dividida en tres (3) áreas: COMPRAS, ALMACEN, INVENTARIO.
-• El área de Compras funciona de la siguiente forma:
-    o Recibe las solicitudes de compras de las diferentes áreas de la empresa.
-    o Cada solicitud tiene un responsable. o Cada solicitud es autorizada por el jefe del
+- La Sección está dividida en tres (3) áreas: COMPRAS, ALMACEN, INVENTARIO.
+- El área de Compras funciona de la siguiente forma:
+   
+    - Recibe las solicitudes de compras de las diferentes áreas de la empresa.
+    - Cada solicitud tiene un responsable. o Cada solicitud es autorizada por el jefe del
     área y posteriormente por el Director Financiero.
 o Quien realiza una solicitud puede ser responsable de uno o varios centros de costos,
 con la salvedad de que él como empleado solo está adscrito a uno. De la solicitud se debe
