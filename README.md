@@ -50,9 +50,9 @@ las siguientes condiciones del negocio para la construcción de una base de dato
 
 • La Sección está dividida en tres (3) áreas: COMPRAS, ALMACEN, INVENTARIO.
 • El área de Compras funciona de la siguiente forma:
-o Recibe las solicitudes de compras de las diferentes áreas de la empresa.
-o Cada solicitud tiene un responsable. o Cada solicitud es autorizada por el jefe del
-área y posteriormente por el Director Financiero.
+    o Recibe las solicitudes de compras de las diferentes áreas de la empresa.
+    o Cada solicitud tiene un responsable. o Cada solicitud es autorizada por el jefe del
+    área y posteriormente por el Director Financiero.
 o Quien realiza una solicitud puede ser responsable de uno o varios centros de costos,
 con la salvedad de que él como empleado solo está adscrito a uno. De la solicitud se debe
 diligenciar la siguiente información: Número de la solicitud (consecutivo), Fecha, Responsable
