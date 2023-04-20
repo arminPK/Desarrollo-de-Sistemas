@@ -37,10 +37,6 @@ cumplir las siguientes especificaciones:
 nacionales, autovías, etc).
 - Las carreteras se dividen en tramos. Un tramo siempre pertenece a una única carretera y no
 puede cambiar de carretera.
-
-EJERCICIOS DE D.E.R.
-
-PROFESOR EMILIANO DORSI
 - Un tramo puede pasar por varias comunas, interesando conocer el Km de la carretera y la
 comuna donde empieza el tramo y en donde termina.
 - Para los tramos que suponen principio o final de carretera, interesa saber si es que la
@@ -51,6 +47,7 @@ Problema 4: Educando S.A. En la Empresa "Educando S.A." se lleva control de sus 
 Servicios. El interés primario es poder hacer que los Bienes se manejen de forma rápida y con
 el menor grado de error. Para esto quien maneja la sección de "Bienes y Suministros" plantea
 las siguientes condiciones del negocio para la construcción de una base de datos:
+
 • La Sección está dividida en tres (3) áreas: COMPRAS, ALMACEN, INVENTARIO.
 • El área de Compras funciona de la siguiente forma:
 o Recibe las solicitudes de compras de las diferentes áreas de la empresa.
@@ -80,10 +77,6 @@ proveedor elegido.
 • El área de Almacén funciona de la siguiente forma:
 o Su función principal es recepcionar los bienes que llegan de los proveedores y
 distribuirlos a las correspondientes áreas que realizaron las solicitudes de compras.
-
-EJERCICIOS DE D.E.R.
-
-PROFESOR EMILIANO DORSI
 o Cuando llega un proveedor mercancía, este hace una entrega física de los bienes, los
 cuales son comparados con la factura que este entrega y con la orden de compra
 correspondiente. Si esta acción es correcta se registra una entrada de almacén por cada
