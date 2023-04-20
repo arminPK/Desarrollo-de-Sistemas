@@ -1,3 +1,0 @@
-DROP DATABASE IF EXISTS Encargos;
-CREATE DATABASE Encargos;
-CREATE TABLE Encargos.Cliente
