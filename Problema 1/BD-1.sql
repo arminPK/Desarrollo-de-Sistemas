@@ -44,3 +44,4 @@ CREATE TABLE Encargos.Articulo
     precio DECIMAL NOT NULL,
     PRIMARY KEY (idArticulo)
 );
+-- ppis poishpos
