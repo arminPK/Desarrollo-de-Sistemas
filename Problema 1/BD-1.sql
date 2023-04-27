@@ -11,7 +11,7 @@ CREATE TABLE Encargos.Cliente
     nombre VARCHAR(60) NOT NULL,
     apellido VARCHAR(60) NOT NULL,
     PRIMARY KEY (idCliente),
-    FOREIGN KEY (idDireccion) REFERENCES Encargos.Direcciones (idDireccion)
+    CONSTRAINT FK_Cliente_Direcciones FOREIGN KEY (idDireccion) REFERENCES Encargos.Direcciones (idDireccion)
 );
 
 CREATE TABLE Encargos.Pedido
@@ -22,8 +22,8 @@ CREATE TABLE Encargos.Pedido
     fechapedido DATE NOT NULL,
     fechaenvio DATE NOT NULL,
     PRIMARY KEY (idPedido),
-    FOREIGN KEY (idArticulo) REFERENCES Encargos.Articulo (idArticulo),
-    FOREIGN KEY (idCliente) REFERENCES Encargos.Cliente (idCliente)
+    CONSTRAINT FK_Pedido_Articulo FOREIGN KEY (idArticulo) REFERENCES Encargos.Articulo (idArticulo),
+    CONSTRAINT FK_Pedido_CLiente FOREIGN KEY (idCliente) REFERENCES Encargos.Cliente (idCliente)
 );
 
 CREATE TABLE Encargos.Direcciones
@@ -44,4 +44,3 @@ CREATE TABLE Encargos.Articulo
     precio DECIMAL NOT NULL,
     PRIMARY KEY (idArticulo)
 );
--- ppis poishpos
