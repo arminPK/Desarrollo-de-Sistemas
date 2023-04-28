@@ -76,4 +76,79 @@ CREATE TABLE Bienes.EntradaAlmacen
     CONSTRAINT FK_EntradaAlmacen_Proveedores FOREIGN KEY (idProveedor) REFERENCES Bienes.Proveedores (idProveedor)
 );
 
-CREATE TABLE 
+CREATE TABLE Bienes.SalidaAlmacen
+( 
+    idSalidaAlmacen INTEGER NOT NULL,
+    fechaSalida DATETIME NOT NULL,
+    fechaEntrega DATETIME NOT NULL,
+    idEmpleado INTEGER NOT NULL,
+    PRIMARY KEY (idSalidaAlmacen),
+);
+
+CREATE TABLE Bienes.ArticuloOrdenContractual
+(
+    idItemOrdenContractual INTEGER NOT NULL,
+    idBien INTEGER NOT NULL,
+    cantidadSolicitada INTEGER NOT NULL,
+    cantidadDespachada INTEGER NOT NULL,
+    valorUnitario DECIMAL NOT NULL,
+    valorTotal DECIMAL NOT NULL,
+    idOrdenContractual INTEGER NOT NULL,
+    PRIMARY KEY (idItemOrdenContractual),
+    CONSTRAINT FK_ArticuloOrdenContractual_OrdenContractual FOREIGN KEY (idOrdenContractual) REFERENCES Bienes.OrdenContractual (idOrdenContractual)
+);
+
+CREATE TABLE Bienes.ItemEntradaALmacen
+(
+    idItemEntradaALmacen INTEGER NOT NULL,
+    idBien INTEGER NOT NULL,
+    cantidad INTEGER NOT NULL,
+    idEntradaAlmacen INTEGER NOT NULL,
+    PRIMARY KEY (idItemEntradaALmacen),
+    CONSTRAINT FK_ItemEntradaALmacen_EntradaAlamcen FOREIGN KEY (idEntradaAlmacen) REFERENCES Bienes.EntradaAlmacen (idEntradaAlmacen)
+);
+
+CREATE TABLE Bienes.OrdenContractual
+(
+    idOrdenContractual INTEGER NOT NULL,
+    fechaOrden DATETIME NOT NULL,
+    montoTotal DECIMAL NOT NULL,
+    fechaEntrega DATETIME NOT NULL,
+    idCotizacion INTEGER NOT NULL,
+    nit INTEGER NOT NULL,
+    nombreDeProveedor VARCHAR(45),
+    idItem INTEGER NOT NULL,
+    idSolicitudCompra INTEGER NOT NULL,
+    PRIMARY KEY (idOrdenContractual),
+    CONSTRAINT FK_OrdenContractual_Item FOREIGN KEY (idItem) REFERENCES Bienes.Item (idItem)
+);
+
+CREATE TABLE Bienes.Compras 
+(
+    idCompra INTEGER NOT NULL,
+    fecha DATETIME NOT NULL,
+    idOrdenContractual INTEGER NOT NULL,
+    idCotizacion INTEGER NOT NULL,
+    idSolicitudCompra INTEGER NOT NULL,
+    PRIMARY KEY (idCompra),
+    CONSTRAINT FK_Compras_OrdenContractual FOREIGN KEY (idOrdenContractual) REFERENCES Bienes.OrdenContractual (idOrdenContractual),
+    CONSTRAINT FK_Compras_Cotizacion FOREIGN KEY (idCotizacion) REFERENCES Bienes.Cotizacion (idCotizacion)
+);
+
+CREATE TABLE Bienes.Cotizacion 
+(
+    idCotizacion INTEGER NOT NULL,
+    idProveedor INTEGER NOT NULL,
+    PRIMARY KEY (idCotizacion),
+    CONSTRAINT FK_Cotizacion_Proveedores FOREIGN KEY (idProveedor) REFERENCES Bienes.Proveedores (idProveedor)
+);
+
+CREATE TABLE Bienes.ItemSalidaAlmacen 
+(
+    idItemSalidaAlmacen INTEGER NOT NULL,
+    idBien INTEGER NOT NULL,
+    cantidad INTEGER NOT NULL,
+    idSalidaAlmacen INTEGER NOT NULL,
+    PRIMARY KEY (idItemSalidaAlmacen),
+    CONSTRAINT FK_ItemSalidaAlmacen_SalidaAlamcen FOREIGN KEY (idSalidaAlmacen) REFERENCES Bienes.SalidaAlmacen (idSalidaAlmacen)
+);
